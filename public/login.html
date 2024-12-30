@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login with Custom IdP</title>
+    <script>
+        function initiateLogin() {
+            // This URL should be the authorization URL for your IdP
+            const authorizationUrl = `http://localhost:4000/auth/authorize?response_type=code&client_id=yourClientId&redirect_uri=http://localhost:4000/callback&scope=openid email profile&state=randomStateString`;
+            
+            // Redirect to the IdP's authorization URL
+            window.location.href = authorizationUrl;
+        }
+    </script>
+</head>
+<body>
+    <h1>Custom IdP OAuth2/OIDC Test Page</h1>
+    <button onclick="initiateLogin()">Login with IdP</button>
+</body>
+</html>
